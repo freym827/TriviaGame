@@ -5,6 +5,12 @@ var question2 = $(".question2");
 var question3 = $(".question3");
 var question4 = $(".question4");
 var question5 = $(".question5");
+var question6 = $(".question6");
+var question7 = $(".question7");
+var question8 = $(".question8");
+var question9 = $(".question9");
+var question10 = $(".question10");
+var question11 = $(".question11");
 var btn = $(".btn");
 var midbox = $(".midbox");
 var yepnope = $(".yepnope");
@@ -85,6 +91,42 @@ var midboxsetup = function(correct, yntext) {
         var imgw = 600;
         var imgh = 300; 
     }
+    if(questionnumber === 6) {
+        var resulttext = "The doctor be a good man and thorough";
+        var img = "assets/images/maude.gif";
+        var imgw = 455;
+        var imgh = 250; 
+    }
+    if(questionnumber === 7) {
+        var resulttext = "All of the above";
+        var img = "assets/images/shabbos.gif";
+        var imgw = 498;
+        var imgh = 273; 
+    }
+    if(questionnumber === 8) {
+        var resulttext = "Vietnam War";
+        var img = "assets/images/vietnam.gif";
+        var imgw = 337;
+        var imgh = 200; 
+    }
+    if(questionnumber === 9) {
+        var resulttext = "Sprinkled in the Pacific Ocean";
+        var img = "assets/images/donny.gif";
+        var imgw = 500;
+        var imgh = 268; 
+    }
+    if(questionnumber === 10) {
+        var resulttext = "There are rules in bowling";
+        var img = "assets/images/overtheline.gif";
+        var imgw = 500;
+        var imgh = 270; 
+    }
+    if(questionnumber === 11) {
+        var resulttext = "That creep can roll, man";
+        var img = "assets/images/thejesus.gif";
+        var imgw = 450;
+        var imgh = 299; 
+    }
     questionnumber++;
     if(correct) {
         resulttext = "";
@@ -101,7 +143,7 @@ var midboxsetup = function(correct, yntext) {
     midtime = setInterval(function(){ 
         clockstop(midtime);
         midbox.css("display", "none");
-        if(questionnumber < 6) {
+        if(questionnumber < 12) {
         clockstart();
         displayquestion();
         } else {
@@ -121,6 +163,18 @@ var displayquestion = function() {
         question4.css("display", "block");
     } else if(questionnumber === 5) {
         question5.css("display", "block");
+    } else if(questionnumber === 6) {
+        question6.css("display", "block");
+    } else if(questionnumber === 7) {
+        question7.css("display", "block");
+    } else if(questionnumber === 8) {
+        question8.css("display", "block");
+    } else if(questionnumber === 9) {
+        question9.css("display", "block");
+    } else if(questionnumber === 10) {
+        question10.css("display", "block");
+    } else if(questionnumber === 11) {
+        question11.css("display", "block");
     }
 }
 
