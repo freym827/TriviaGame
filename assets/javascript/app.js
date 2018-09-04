@@ -38,7 +38,6 @@ var clockstop = function(whichclock) {
 var runout = function() {
     wronganswers++;
     questionbox.css("display", "none");
-    midbox.css("display", "block");
     var yntext = "OUT OF TIME!"
     var correct = false;
     midboxsetup(correct, yntext);
@@ -55,6 +54,7 @@ var endgame = function() {
 }
 
 var midboxsetup = function(correct, yntext) {
+    questionbox.css("display", "none");
     if(questionnumber === 1) {
         var resulttext = "Mixing With Vodka and Kahlua";
         var img = "assets/images/whiterussian.gif";
@@ -96,6 +96,7 @@ var midboxsetup = function(correct, yntext) {
     midimage.attr("src", img);
     midimage.width(imgw);
     midimage.height(imgh);
+    midbox.css("display", "block");
     
     midtime = setInterval(function(){ 
         clockstop(midtime);
@@ -133,8 +134,6 @@ btn.on("click", function() {
 $(".answerwrong").on("click", function() {
     clockstop(timeout);
     wronganswers++;
-    questionbox.css("display", "none");
-    midbox.css("display", "block");
     var yntext = "Wrong Answer!"
     var correct = false;
     midboxsetup(correct, yntext);
@@ -143,8 +142,6 @@ $(".answerwrong").on("click", function() {
 $(".answerright").on("click", function() {
     clockstop(timeout);
     rightanswers++;
-    questionbox.css("display", "none");
-    midbox.css("display", "block");
     var yntext = "Correct!"
     var correct = true;
     midboxsetup(correct, yntext);
