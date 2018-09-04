@@ -179,6 +179,7 @@ var displayquestion = function() {
 }
 
 btn.on("click", function() {
+    $(".endbox").css("display", "none");
     btn.css("display", "none");
     timer.css("display", "block");
     displayquestion();
