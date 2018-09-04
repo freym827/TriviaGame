@@ -1,4 +1,5 @@
 var timer = $(".timer");
+//setting variables for all questions
 var questionbox = $(".questionbox");
 var question1 = $(".question1");
 var question2 = $(".question2");
@@ -12,18 +13,20 @@ var question9 = $(".question9");
 var question10 = $(".question10");
 var question11 = $(".question11");
 var btn = $(".btn");
+//setting variables to handle responses 
 var midbox = $(".midbox");
 var yepnope = $(".yepnope");
 var result = $(".result");
 var midimage = $(".midimage");
-
+//current question and counting right and wrong answers
 var questionnumber = 1;
 var rightanswers = 0;
 var wronganswers = 0;
-
+//clocks created so they can be stopped
 var timeout = function() {};
 var midtime = function() {};
 
+//starting game and handling if timer goes to 0
 var clockstart = function() {
     var seconds = 30;
     timer.text("Time Remaining: " + seconds + " Seconds")
@@ -40,7 +43,7 @@ var clockstart = function() {
 var clockstop = function(whichclock) {
     clearInterval(whichclock);
 }
-
+//when time runs out
 var runout = function() {
     wronganswers++;
     questionbox.css("display", "none");
@@ -48,7 +51,7 @@ var runout = function() {
     var correct = false;
     midboxsetup(correct, yntext);
 }
-
+//when all questions are done
 var endgame = function() {
     $(".endbox").css("display", "block");
     $(".correctans").text("Correct Answers: " + rightanswers);
@@ -59,6 +62,8 @@ var endgame = function() {
     questionnumber = 1;
 }
 
+//gifs and text for when each question has been answered, plus formatting for gif.
+//then moving on to the next question after about 6 seconds automatically
 var midboxsetup = function(correct, yntext) {
     questionbox.css("display", "none");
     if(questionnumber === 1) {
@@ -151,7 +156,7 @@ var midboxsetup = function(correct, yntext) {
         }
         }, 6100);
 }
-
+//displaying the current question
 var displayquestion = function() {
     if(questionnumber === 1) {
         question1.css("display", "block");
@@ -178,6 +183,7 @@ var displayquestion = function() {
     }
 }
 
+//start button
 btn.on("click", function() {
     $(".endbox").css("display", "none");
     btn.css("display", "none");
@@ -185,7 +191,7 @@ btn.on("click", function() {
     displayquestion();
     clockstart();
 });
-
+//when wrong answer is clicked
 $(".answerwrong").on("click", function() {
     clockstop(timeout);
     wronganswers++;
@@ -193,7 +199,7 @@ $(".answerwrong").on("click", function() {
     var correct = false;
     midboxsetup(correct, yntext);
 });
-
+//when right answer is clicked
 $(".answerright").on("click", function() {
     clockstop(timeout);
     rightanswers++;
