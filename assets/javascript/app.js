@@ -25,7 +25,7 @@ var timeout = function() {};
 var midtime = function() {};
 
 var clockstart = function() {
-    var seconds = 10;
+    var seconds = 30;
     timer.text("Time Remaining: " + seconds + " Seconds")
     timeout = setInterval(function(){ 
         seconds--; 
