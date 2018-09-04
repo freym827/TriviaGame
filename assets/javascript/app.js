@@ -1,3 +1,5 @@
+$( document ).ready(function() {
+
 var timer = $(".timer");
 //setting variables for all questions
 var questionbox = $(".questionbox");
@@ -206,4 +208,6 @@ $(".answerright").on("click", function() {
     var yntext = "Correct!"
     var correct = true;
     midboxsetup(correct, yntext);
+});
+
 });
