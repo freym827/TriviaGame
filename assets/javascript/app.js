@@ -134,6 +134,10 @@ var midboxsetup = function(correct, yntext) {
         var imgw = 450;
         var imgh = 299; 
     }
+    finishmidbox(correct, resulttext, yntext, img, imgw, imgh)
+}
+
+var finishmidbox = function(correct, resulttext, yntext, img, imgw, imgh) {
     questionnumber++;
     if(correct) {
         resulttext = "";
